@@ -1,0 +1,5 @@
+# (1) Check Dates
+
+openssl x509 -in /db/PostgreSQL/10-pglogical/data/server.crt -noout -dates | grep notAfter | cut -f 2 -d '='
+
+openssl x509 -in /db/PostgreSQL/10/data/server.crt -noout -dates | grep notAfter | cut -f 2 -d '='
