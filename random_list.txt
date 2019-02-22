@@ -3,3 +3,9 @@
 openssl x509 -in /db/PostgreSQL/10-pglogical/data/server.crt -noout -dates | grep notAfter | cut -f 2 -d '='
 
 openssl x509 -in /db/PostgreSQL/10/data/server.crt -noout -dates | grep notAfter | cut -f 2 -d '='
+
+
+SELECT a.client_addr, a.client_port, a.application_name, a.usename, 
+a.datname, s.* 
+FROM pg_stat_ssl s 
+JOIN pg_stat_activity a USING (pid);
