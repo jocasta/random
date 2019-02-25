@@ -67,7 +67,7 @@ echo "The CSR has been generated:"
 cat $CSR_FILE
 
 CA_FILE="$BASE_DIR/RoS-Local-RootCA.crt"
-sed -n '/^# RoS-Local-RootCA/,/^-----END CERTIFICATE-----/p' /etc/pki/tls/certs/ca-bundle.crt | grep -v "RoS-Local-RootCA" > $CA_FILE
+sed -n '/# RoS-Local-RootCA/,/-----END CERTIFICATE-----/p' /etc/pki/tls/certs/ca-bundle.crt | grep -v "RoS-Local-RootCA" > $CA_FILE
 if [[ $? -ne 0 ]] ; then
     echo "Couldn't find RoS-Local-RootCA in /etc/pki/tls/certs/ca-bundle.crt - you will have to find it yourself!"
     exit 0
