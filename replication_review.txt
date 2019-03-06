@@ -1,0 +1,27 @@
+## repmgr
+
+A command-line tool used to perform administrative tasks 
+such as:
+
+	(1) Setting up standby servers
+
+	(2) Promoting a standby server to primary
+
+	(3) Switching over primary and standby servers
+
+	(4) Displaying the status of servers in the replication 
+		cluster
+
+## repmgrd
+
+A daemon which actively monitors servers in a replication 
+cluster and performs the following tasks:
+
+	(1) Monitoring and recording replication performance
+
+	(2) Performing failover by detecting failure of the primary 
+		and promoting the most suitable standby server
+
+	(3) Provide notifications about events in the cluster to 
+		a user-defined script which can perform tasks such as 
+		sending alerts by email
