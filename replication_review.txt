@@ -25,3 +25,27 @@ cluster and performs the following tasks:
 	(3) Provide notifications about events in the cluster to 
 		a user-defined script which can perform tasks such as 
 		sending alerts by email
+
+
+
+
+
+## Tables
+
+repmgr.events: records events of interest
+
+repmgr.nodes:  connection and status information for each 
+               server in the replication cluster
+
+repmgr.monitoring_history: historical standby monitoring 
+                           information written by repmgrd
+
+# Views
+
+repmgr.show_nodes: based on the table repmgr.nodes, 
+                   additionally showing the name of the 
+                   servers upstream node
+
+repmgr.replication_status: when repmgrds monitoring is 
+                           enabled, shows current monitoring 
+                           status for each standby.
